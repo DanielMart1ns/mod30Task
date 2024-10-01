@@ -32,6 +32,17 @@ public class Produto implements Persistente {
 	
 	@ColunaTabela(dbName = "valor", setJavaName = "setValor")
 	private BigDecimal valor;
+	
+	@ColunaTabela(dbName = "importado", setJavaName = "setImportado")
+	private Boolean importado;
+
+	public Boolean getIsImportado() {
+		return this.importado;
+	}
+
+	public void setImportado(Boolean importado) {
+		this.importado = importado;
+	}
 
 	public String getCodigo() {
 		return codigo;
