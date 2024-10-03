@@ -69,8 +69,8 @@ public class ProdutoDAO extends GenericDAO<Produto, String> implements IProdutoD
 		sb.append("NOME = ?,");
 		sb.append("DESCRICAO = ?,");
 		sb.append("VALOR = ?,");
-		sb.append("IMPORTADO = ?,");
-		sb.append("WHERE CODIGO = ?");
+		sb.append("IMPORTADO = ?");
+		sb.append(" WHERE CODIGO = ?");
 		return sb.toString();
 	}
 
@@ -81,6 +81,7 @@ public class ProdutoDAO extends GenericDAO<Produto, String> implements IProdutoD
 		stmUpdate.setString(3, entity.getDescricao());
 		stmUpdate.setBigDecimal(4, entity.getValor());
 		stmUpdate.setBoolean(5, entity.getIsImportado());
+		stmUpdate.setString(6, entity.getCodigo());
 	}
 
 	@Override
